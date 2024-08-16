@@ -1,17 +1,19 @@
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using proyetoef;
+using Microsoft.AspNetCore.Mvc;  
+using Microsoft.EntityFrameworkCore;  
+using proyetoef;  
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args);  
 
-builder.Services.AddDbContext<TareasContext>(p=> p.UseInMemoryDatabase("TareasDB"));
-var app = builder.Build();
+// Configura la base de datos SQL Server  
+builder.Services.AddSqlServer<TareasContext>("Server=DESKTOP-CB6U2F4\\MSSQLSERVER2;Database=TareasDb;User Id=sa;Password=123;Encrypt=false;");  
 
-app.MapGet("/", () => "Hello World!");
-app.MapGet("/dbconexion",async ([FromServices] TareasContext dbContext) =>
-{
-    dbContext.Database.EnsureCreated();
-    return Results.Ok("Base de datos en memoria: "+ dbContext.Database.IsInMemory());
-});
+var app = builder.Build();  
 
-app.Run();
+app.MapGet("/", () => "Hello World!");  
+
+app.MapGet("/dbconexion", async ([FromServices] TareasContext dbContext) =>  
+{  
+    dbContext.Database.EnsureCreated();  
+    return Results.Ok("Base de datos en SQL Server: " + !dbContext.Database.IsInMemory());  
+});  
+app.Run();  
