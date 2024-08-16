@@ -14,4 +14,15 @@ public class TareasContext : DbContext
     public DbSet<Categoria> Categorias {get;set;}
     public DbSet<Tarea> Tareas {get;set;}
     public TareasContext(DbContextOptions<TareasContext> options) :base(options){}
+    protected override void OnModelCreating(ModelBuilder modelBuilder) // esto se hace para hacer las restricciones de la clase categoria
+    {
+        modelBuilder.Entity<Categoria>(categoria=>
+        {
+            categoria.Totable("Categoria"); // Con esto se crea la clase categoria en una tabla 
+            categoria.Haskey(x=> x.CategoriaId);
+            categoria.Property(x=> x.Nombre).IsRequired().HasMaxLength(150);
+            categoria.Property(x=> x.Descripcion);
+        });
+
+    }
 }
