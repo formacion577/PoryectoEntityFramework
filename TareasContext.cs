@@ -18,8 +18,8 @@ public class TareasContext : DbContext
     {
         modelBuilder.Entity<Categoria>(categoria=>
         {
-            categoria.Totable("Categoria"); // Con esto se crea la clase categoria en una tabla 
-            categoria.Haskey(x=> x.CategoriaId);
+            categoria.ToTable("Categoria"); // Con esto se crea la clase categoria en una tabla 
+            categoria.HasKey(x=> x.CategoriaId);
             categoria.Property(x=> x.Nombre).IsRequired().HasMaxLength(150);
             categoria.Property(x=> x.Descripcion);
         });
