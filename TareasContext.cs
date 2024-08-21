@@ -22,7 +22,8 @@ namespace proyetoef
             {  
                 categoria.ToTable("Categoria"); // Nombre de la tabla  
                 categoria.HasKey(x => x.CategoriaId); // Clave primaria  
-                categoria.Property(x => x.Nombre).IsRequired().HasMaxLength(150);  
+                categoria.Property(x => x.Nombre).IsRequired().HasMaxLength(150); 
+                categoria.Property(x=> x.Peso); 
                 categoria.Property(x => x.Descripcion);  
             });  
 

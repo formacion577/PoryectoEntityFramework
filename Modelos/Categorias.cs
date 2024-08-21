@@ -11,6 +11,8 @@ public class Categoria
     //[Required]   // Con esta propiedad estamos forzando al atributo sea requerida.
     //[MaxLength(150)] // con esta propiedad forzamos a que el atributo no exeda los 150 caracteres.     
     public string Nombre {get; set;}
-    public string Descripcion {get;set;}  
+    public string Descripcion {get;set;} 
+
+    public int Peso {get;set;} 
     public virtual ICollection<Tarea> Tareas {get;set;}   
 }
