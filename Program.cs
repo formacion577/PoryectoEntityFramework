@@ -19,7 +19,9 @@ app.MapGet("/dbconexion", async ([FromServices] TareasContext dbContext) =>
 });
 app.MapGet("/api/tareas", async ([FromServices] TareasContext dbconexion) =>
 {
-    return Results.Ok(dbconexion.Tareas);
-} );
+    var DatosTareas=dbconexion.Tareas;
+    var DatosCategoria=dbconexion.Categorias;
+    return Results.Ok(DatosTareas.Include(x=> x.Categoria).Where(x=> x.PrioridadTarea== ProjectoEF.Modelos.Prioridad.Baja));
+});
 
 app.Run();  
