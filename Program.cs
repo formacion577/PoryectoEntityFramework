@@ -1,4 +1,3 @@
-using System.Data;
 using Microsoft.AspNetCore.Mvc;  
 using Microsoft.EntityFrameworkCore;
 using ProjectoEF.Modelos;
@@ -22,7 +21,8 @@ app.MapGet("/dbconexion", async ([FromServices] TareasContext dbContext) =>
 app.MapGet("/api/tareas", async ([FromServices] TareasContext dbContext) =>
 {
     var DatosTareas=dbContext.Tareas;
-    return Results.Ok(DatosTareas.Include(x=> x.Categoria).Where(x=> x.PrioridadTarea== ProjectoEF.Modelos.Prioridad.Baja));
+    //return Results.Ok(DatosTareas.Include(X=> X.Categoria).Where(x=> x.PrioridadTarea == ProjectoEF.Modelos.Prioridad.Media));
+    return Results.Ok(DatosTareas.Include(X=> X.Categoria));
 });
 app.MapPost("/api/tareas", async ([FromServices] TareasContext dbContext, [FromBody] Tarea tarea) =>
 {
