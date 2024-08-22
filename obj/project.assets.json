@@ -4100,19 +4100,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\FORMACION\\.nuget\\packages\\": {}
+    "C:\\Users\\parra\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\D\\Cuerso de Programación\\Fundamentos Entity Framework\\Proyecto Entity F\\Proyecto Entity F.csproj",
+      "projectUniqueName": "D:\\Clase de Programación\\Cuerso de Programación\\Entity Framework\\PoryectoEntityFramework\\Proyecto Entity F.csproj",
       "projectName": "Proyecto Entity F",
-      "projectPath": "E:\\D\\Cuerso de Programación\\Fundamentos Entity Framework\\Proyecto Entity F\\Proyecto Entity F.csproj",
-      "packagesPath": "C:\\Users\\FORMACION\\.nuget\\packages\\",
-      "outputPath": "E:\\D\\Cuerso de Programación\\Fundamentos Entity Framework\\Proyecto Entity F\\obj\\",
+      "projectPath": "D:\\Clase de Programación\\Cuerso de Programación\\Entity Framework\\PoryectoEntityFramework\\Proyecto Entity F.csproj",
+      "packagesPath": "C:\\Users\\parra\\.nuget\\packages\\",
+      "outputPath": "D:\\Clase de Programación\\Cuerso de Programación\\Entity Framework\\PoryectoEntityFramework\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\FORMACION\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\parra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

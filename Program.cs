@@ -16,6 +16,10 @@ app.MapGet("/dbconexion", async ([FromServices] TareasContext dbContext) =>
     // Usar migraciones para asegurar que el esquema esté actualizado  
     await dbContext.Database.MigrateAsync();  
     return Results.Ok("Base de datos en SQL Server: " + !dbContext.Database.IsInMemory());  
-});  
+});
+app.MapGet("/api/tareas", async ([FromServices] TareasContext dbconexion) =>
+{
+    return Results.Ok(dbconexion.Tareas);
+} );
 
 app.Run();  
